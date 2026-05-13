@@ -1,0 +1,205 @@
+/* =============================================================
+   Metalcoop — Design Tokens
+   Source of truth for color, type, spacing, motion.
+   Loaded BEFORE any other stylesheet.
+
+   See PRODUCT.md and DESIGN.md for the strategic + visual brief.
+   Brand emerald is locked at #059669 / #047857 (signature only,
+   not surface). Iron-warm neutrals carry the forge-lane chassis.
+   Ember-orange carries heat (numbers, process, CTA emphasis).
+   ============================================================= */
+
+/* =============================================================
+   Type — Space Grotesk + Inter + Space Mono (Google Fonts)
+   Space Grotesk replaces ABC Monument Grotesk (display/headlines)
+   Inter replaces ABC Diatype (body copy)
+   Space Mono replaces ABC Diatype Mono (spec sheets, lot codes)
+   ============================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap");
+
+:root {
+  /* -----------------------------------------------------------
+     Brand emerald scale (locked hue ~161)
+     -- 500 = #059669 (legacy --accent)
+     -- 600 = #047857 (legacy --accent-dark)
+     Used as SIGNATURE only: logo, certification marks, the
+     cooperative byline, focus rings. Never as a section wash,
+     never as a CTA fill. See "Signature-Not-Wash Rule".
+     ----------------------------------------------------------- */
+  --brand-50:  oklch(97%   0.022 161);
+  --brand-100: oklch(93%   0.045 161);
+  --brand-200: oklch(86%   0.075 161);
+  --brand-300: oklch(78%   0.100 161);
+  --brand-400: oklch(70%   0.115 161);
+  --brand-500: oklch(60.7% 0.118 161.2); /* = #059669 locked */
+  --brand-600: oklch(53%   0.105 162);   /* = #047857 locked */
+  --brand-700: oklch(45%   0.085 162);
+  --brand-800: oklch(35%   0.070 162);
+  --brand-900: oklch(25%   0.050 161);
+
+  /* -----------------------------------------------------------
+     Iron-warm neutral scale (hue ~60, low chroma 0.005-0.012)
+     Tinted toward the iron / soot end of warm. Never #000/#fff.
+     500 sits roughly where legacy --muted #374151 sat in luminance.
+     ----------------------------------------------------------- */
+  --neutral-0:   oklch(99%   0.004 60); /* paper, near-white warmed */
+  --neutral-50:  oklch(97%   0.005 60); /* warm cream alt */
+  --neutral-100: oklch(94.5% 0.008 60); /* warm cream */
+  --neutral-200: oklch(89%   0.008 60); /* hairline border */
+  --neutral-300: oklch(82%   0.008 60);
+  --neutral-400: oklch(70%   0.008 60);
+  --neutral-500: oklch(56%   0.008 60);
+  --neutral-600: oklch(45%   0.008 60);
+  --neutral-700: oklch(36%   0.008 60); /* muted body */
+  --neutral-800: oklch(28%   0.006 60); /* cast-iron */
+  --neutral-900: oklch(18%   0.005 60); /* soot ink */
+
+  /* -----------------------------------------------------------
+     Ember-orange (heat). Used for numbers, process indicators,
+     CTA emphasis. Held to <=10% of any screen. Hue ~38.
+     Pre-final values; /impeccable colorize will pick the canonical
+     hue+chroma. These are placeholders sized for ember discipline.
+     ----------------------------------------------------------- */
+  --ember-100: oklch(95% 0.030 38);
+  --ember-300: oklch(80% 0.110 38);
+  --ember-500: oklch(65% 0.180 38);
+  --ember-700: oklch(48% 0.150 38);
+  --ember-900: oklch(30% 0.090 38);
+
+  /* -----------------------------------------------------------
+     Status (semantic). Three values only; not full scales.
+     ok=brand for 'certified', warn=ember, error=red.
+     ----------------------------------------------------------- */
+  --status-ok:    var(--brand-600);
+  --status-warn:  var(--ember-500);
+  --status-error: oklch(55% 0.190 27);  /* red, AA-safe on white */
+
+  /* -----------------------------------------------------------
+     Semantic role tokens
+     Use these in component CSS instead of color primitives,
+     so future palette swaps don't require global find-replace.
+     ----------------------------------------------------------- */
+  --surface:         var(--neutral-0);    /* default page surface */
+  --surface-soft:    var(--neutral-50);   /* sectional contrast */
+  --surface-inverse: var(--neutral-900);  /* dark blocks (footer, drenched sections) */
+
+  --text:            var(--neutral-900);  /* default body text */
+  --text-muted:      var(--neutral-700);  /* secondary copy, captions */
+  --text-soft:       var(--neutral-500);  /* tertiary, labels */
+  --text-on-brand:   var(--neutral-0);    /* text on brand-500/600 surfaces */
+  --text-on-dark:    var(--neutral-50);   /* text on inverse surfaces */
+
+  --border:          var(--neutral-200);  /* hairline */
+  --border-strong:   var(--neutral-300);  /* divider, emphasis */
+  --border-on-dark:  oklch(100% 0 0 / 0.18); /* rule line on dark surface */
+
+  --focus-ring:      oklch(60.7% 0.118 161.2 / 0.35); /* brand emerald @ 35% alpha */
+
+  /* -----------------------------------------------------------
+     Spacing scale (4px base, 12 steps).
+     Linear up to step 6 (24px), then larger jumps for layout.
+     ----------------------------------------------------------- */
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-7:  32px;
+  --space-8:  40px;
+  --space-9:  48px;
+  --space-10: 64px;
+  --space-11: 80px;
+  --space-12: 96px;
+
+  /* -----------------------------------------------------------
+     Type scale (final values resolved in /impeccable typeset).
+     Each step is a paired font-size + line-height.
+     ----------------------------------------------------------- */
+  --text-xs:    12px;
+  --text-xs-lh: 1.4;
+  --text-sm:    13px;
+  --text-sm-lh: 1.45;
+  --text-base:    16px;
+  --text-base-lh: 1.55;
+  --text-md:    18px;
+  --text-md-lh: 1.55;
+  --text-lg:    22px;
+  --text-lg-lh: 1.4;
+  --text-xl:    28px;
+  --text-xl-lh: 1.25;
+  --text-2xl:    36px;
+  --text-2xl-lh: 1.15;
+  --text-3xl:    48px;
+  --text-3xl-lh: 1.05;
+
+  /* -----------------------------------------------------------
+     Font family stacks — ABC Dinamo (resolved by /impeccable typeset).
+     Display:  ABC Monument Grotesk   — cast-plate signage, headlines
+     Body:     ABC Diatype            — supervisor's voice, body copy
+     Mono:     ABC Diatype Mono       — spec sheets, lot codes, units
+     Each stack chains to a metric-similar system fallback so the
+     site stays legible before the WOFF2 files are dropped into
+     /assets/fonts/.
+     ----------------------------------------------------------- */
+  --font-display: "Space Grotesk", "Arial Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body:    "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono:    "Space Mono", ui-monospace, "SF Mono", "Cascadia Code", "Menlo", monospace;
+
+  /* Weights. Monument Grotesk is used at 700+ (Bold / Heavy / Black);
+     Diatype carries 400 / 500 / 700 for body and emphasis. */
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+  --weight-heavy:    800;
+  --weight-black:    900;
+
+  /* Letterspacing (tracking) */
+  --tracking-tight:   -0.02em;
+  --tracking-snug:    -0.01em;
+  --tracking-normal:  0;
+  --tracking-wide:    0.05em;
+  --tracking-wider:   0.10em;
+  --tracking-widest:  0.18em;
+
+  /* -----------------------------------------------------------
+     Radii. Forge-lane prefers near-square corners; large radii
+     are reserved for media containers (slider, map, photo).
+     ----------------------------------------------------------- */
+  --radius-xs: 3px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 999px;
+
+  /* -----------------------------------------------------------
+     Motion. "Restrained: state changes only" per DESIGN.md.
+     Use ease-out exponential curves; no bounce or elastic.
+     ----------------------------------------------------------- */
+  --ease-out-quart:  cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-quint:  cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast:   120ms;
+  --duration-base:   180ms;
+  --duration-slow:   320ms;
+
+  /* Slider Ken Burns duration (legacy, still referenced by
+     index hero). Will go away once the carousel is replaced. */
+  --kb-duration:    12s;
+  --reveal-duration: 0.8s;
+  --reveal-stagger:  80ms;
+  --nav-height:     72px;
+
+  /* -----------------------------------------------------------
+     Legacy aliases — keep working while the codebase migrates.
+     New code should use the role tokens above instead.
+     ----------------------------------------------------------- */
+  --bg:          var(--surface);
+  --muted:       #374151;             /* locked legacy value (slate-700) */
+  --accent:      var(--brand-500);    /* #059669 */
+  --accent-dark: var(--brand-600);    /* #047857 */
+  --surface-token: var(--surface);    /* legacy --surface alias */
+  --glass:       oklch(100% 0 0 / 0.6);
+  --elev-1:      0 6px 18px oklch(0% 0 0 / 0.06);
+}

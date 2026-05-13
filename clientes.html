@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Clientes | Metalcoop</title>
+    <!-- Webfonts (ABC Monument Grotesk + Diatype + Diatype Mono) self-hosted
+         via @font-face in css/tokens.css. See /assets/fonts/README.md. -->
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Site meta -->
+    <meta name="description" content="Clientes Metalcoop: Tier-1 automotivos (Dana, Eaton, Meritor, ZF) e fabricantes brasileiros de driveline, transmissão, eixos e componentes estruturais. Forjados rastreados conforme IATF 16949 e ISO 9001." />
+    <meta name="keywords" content="metalcoop clientes, fornecedor automotivo, tier 1, driveline, transmissão, eixos forjados, IATF 16949, Dana, Eaton, Meritor, ZF" />
+    <meta name="author" content="Metalcoop" />
+    <meta name="robots" content="index,follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Metalcoop" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content="Clientes | Metalcoop" />
+    <meta property="og:description" content="Tier-1 automotivos e fabricantes brasileiros que recebem forjados rastreados da Metalcoop. IATF 16949 e ISO 9001." />
+    <meta property="og:url" content="https://metalcoop.ind.br/clientes.html" />
+    <meta property="og:image" content="https://metalcoop.ind.br/assets/fachada01.1024.jpg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Clientes | Metalcoop" />
+    <meta name="twitter:description" content="Tier-1 automotivos atendidos pela Metalcoop. IATF 16949 e ISO 9001." />
+    <meta name="twitter:image" content="https://metalcoop.ind.br/assets/fachada01.1024.jpg" />
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" href="favicon-32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="favicon-192.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="favicon-180.png">
+</head>
+  <body>
+<div data-include="header"></div>
+<noscript>
+  <header><nav class="container noscript-nav">
+    <a href="index.html">Home</a> ·
+    <a href="empresa.html">A Empresa</a> ·
+    <a href="produtos.html">Produtos</a> ·
+    <a href="clientes.html">Clientes</a> ·
+    <a href="contato.html">Contato</a>
+  </nav></header>
+</noscript>
+<main class="container">
+
+      <h1 class="heading--accent">Clientes</h1>
+
+      <p class="clients-lede">Fornecemos forjados de aço para fabricantes de sistemas automotivos, com aplicações em transmissão, eixos, chassis e suspensão. Cada lote segue os requisitos da IATF 16949 e da ISO 9001, com rastreabilidade da matéria-prima ao cliente final.</p>
+
+      <h2>Principais clientes</h2>
+      <ul class="clients-list" id="clientsList" aria-label="Logotipos dos principais clientes Metalcoop"></ul>
+      <noscript>
+        <ul class="clients-list" aria-label="Logotipos dos principais clientes Metalcoop">
+          <li><img src="assets/Clientes/logo_dana.png" alt="Dana" loading="lazy" decoding="async"></li>
+          <li><img src="assets/Clientes/logo_eaton.png" alt="Eaton" loading="lazy" decoding="async"></li>
+          <li><img src="assets/Clientes/logo_meritor.png" alt="Meritor" loading="lazy" decoding="async"></li>
+          <li><img src="assets/Clientes/logo_zf.png" alt="ZF" loading="lazy" decoding="async"></li>
+          <li><img src="assets/Clientes/logo_marruci.png" alt="Marruci" loading="lazy" decoding="async"></li>
+          <li><img src="assets/Clientes/logo_unimil.png" alt="Unimil" loading="lazy" decoding="async"></li>
+          <li><img src="assets/Clientes/logo_chains.png" alt="Chains" loading="lazy" decoding="async"></li>
+          <li><img src="assets/Clientes/logo_ello.png" alt="Ello" loading="lazy" decoding="async"></li>
+        </ul>
+      </noscript>
+
+      <h2>Segmentos atendidos</h2>
+      <dl class="segments">
+        <div>
+          <dt>Linha automotiva</dt>
+          <dd>Forjados aplicados em sistemas de transmissão, pinhões, luvas, eixos estriados, diferenciais e componentes de driveline para veículos comerciais e de passeio.</dd>
+        </div>
+        <div>
+          <dt>Veículos pesados e off-road</dt>
+          <dd>Eixos forjados, segmentos de tubo e componentes estruturais para caminhões, ônibus, implementos rodoviários e máquinas agrícolas.</dd>
+        </div>
+        <div>
+          <dt>Indústria mecânica</dt>
+          <dd>Buchas, pinos, rolos e peças especiais para fabricantes de equipamentos industriais e linhas de montagem.</dd>
+        </div>
+      </dl>
+    </main>
+<div data-include="footer"></div>
+<noscript>
+  <footer><div class="container noscript-footer">
+    Metalcoop · <a href="mailto:metalcoop@metalcoop.ind.br">metalcoop@metalcoop.ind.br</a> ·
+    Praça Álvaro Guião, 233 — Salto/SP · +55 11 4028-9600
+  </div></footer>
+</noscript>
+<script src="js/partials.js"></script>
+    <script src="js/site.js"></script>
+    <script>
+      // ============================================================
+      //  Lista de clientes
+      // ============================================================
+      //  Para adicionar um cliente novo:
+      //    1. Coloque o arquivo do logo em "assets/Clientes/".
+      //    2. Adicione uma linha abaixo no formato:
+      //         { name: 'Nome', logo: 'arquivo.png' }
+      //       Opcional: url: 'https://site-do-cliente.com'
+      //       (se informado, o logo vira link clicável).
+      //    3. Salve o arquivo. Pronto.
+      //  A ordem da lista é a ordem que aparece na página.
+      // ============================================================
+      const clients = [
+        { name: 'Dana',    logo: 'logo_dana.png' },
+        { name: 'Eaton',   logo: 'logo_eaton.png' },
+        { name: 'Meritor', logo: 'logo_meritor.png' },
+        { name: 'ZF',      logo: 'logo_zf.png' },
+        { name: 'Marruci', logo: 'logo_marruci.png' },
+        { name: 'Unimil',  logo: 'logo_unimil.png' },
+        { name: 'Chains',  logo: 'logo_chains.png' },
+        { name: 'Ello',    logo: 'logo_ello.png' },
+        // { name: 'Novo Cliente', logo: 'logo_novocliente.png', url: 'https://...' },
+      ];
+
+      (function renderClients() {
+        const list = document.getElementById('clientsList');
+        if (!list) return;
+        const frag = document.createDocumentFragment();
+        for (const c of clients) {
+          if (!c || !c.logo) continue;
+          const li = document.createElement('li');
+          const img = document.createElement('img');
+          img.src = 'assets/Clientes/' + c.logo;
+          img.alt = c.name || '';
+          img.loading = 'lazy';
+          img.decoding = 'async';
+          if (c.url) {
+            const a = document.createElement('a');
+            a.href = c.url;
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+            a.setAttribute('aria-label', c.name || c.logo);
+            a.appendChild(img);
+            li.appendChild(a);
+          } else {
+            li.appendChild(img);
+          }
+          frag.appendChild(li);
+        }
+        list.appendChild(frag);
+      })();
+    </script>
+  </body>
+</html>
